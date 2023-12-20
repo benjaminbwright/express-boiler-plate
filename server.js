@@ -32,5 +32,10 @@ app.get("/api/todos", (req, res) =>
   ])
 );
 
+// 404 route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/404.html"));
+});
+
 // START SERVER
 app.listen(PORT, () => console.log(`Server live on port ${PORT}`));
